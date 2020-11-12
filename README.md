@@ -31,3 +31,11 @@
 - Start to fetch the characters ids appending `/characters` to the above url. This operation will take a few seconds and cache the results based on the timer set in the `EmbeddedCacheConfig.java` class. 
 - To get the full character details, append a character id to the url (e.g. `http://localhost/marvelApi/characters/1009696`). This will return character name, id, description and thumbnail.
 - To get a translation (refer to https://cloud.google.com/translate/docs/languages for available languages) simply append a language ISO-639-1 Code to the above url (e.g. `http://localhost/marvelApi/characters/1009696/de`)# MarvelApi
+
+
+##How to use Swagger
+- To view the Swagger UI related to the project, navigate to the following link after starting the application:
+    1) http://localhost:8080/swagger-ui/
+    
+##Dependencies management
+- Dependencies are managed through the `build.gradle` file.

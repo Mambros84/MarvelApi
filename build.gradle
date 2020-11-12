@@ -1,0 +1,49 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+    id "ca.cutterslade.analyze" version "1.4.2"
+}
+
+group = 'com.marvel'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url "https://maven.springframework.org/release"
+    }
+    maven {
+        url "https://maven.restlet.com"
+    }
+}
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-cache'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    // https://mvnrepository.com/artifact/commons-codec/commons-codec
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.5'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.googlecode.json-simple:json-simple:1.1'
+
+    compile("com.hazelcast:hazelcast:4.0.1")
+    compile("com.hazelcast:hazelcast-spring:4.0.1")
+    // https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
+    compile group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+    compile 'com.google.cloud:google-cloud-translate:1.95.3'
+    // https://mvnrepository.com/artifact/ca.cutterslade.gradle/gradle-dependency-analyze
+    compile group: 'ca.cutterslade.gradle', name: 'gradle-dependency-analyze', version: '1.4.2'
+}
+
+test {
+    useJUnitPlatform()
+}
